@@ -23,7 +23,7 @@ struct POWNodeFilter end
 
 belief_type(::Type{POWNodeFilter}, ::Type{P}) where {P<:POMDP} = POWNodeBelief{statetype(P), actiontype(P), obstype(P), P}
 
-init_node_sr_belief(::POWNodeFilter, p::POMDP, s, a, sp, o, r) = POWNodeBelief(p, s, a, sp, o, r) 
+init_node_sr_belief(::POWNodeFilter, p::POMDP, s, a, sp, o, r) = POWNodeBelief(p, s, a, sp, o, r)
 
 function push_weighted!(b::POWNodeBelief, ::POWNodeFilter, s, sp, r)
     w = obs_weight(b.model, s, b.a, sp, b.o)

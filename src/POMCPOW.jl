@@ -17,8 +17,9 @@ using BasicPOMCP: convert_estimator
 import Base: insert!
 import POMDPs: action, solve, mean, rand, updater
 import POMDPModelTools: action_info
+import BasicPOMCP: isroot, current_obs
 
-import MCTS: n_children, next_action, isroot, node_tag, tooltip_tag
+import MCTS: n_children, next_action, node_tag, tooltip_tag
 
 export
     POMCPOWSolver,

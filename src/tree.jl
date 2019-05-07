@@ -58,8 +58,8 @@ struct POWTreeObsNode{B,A,O,RB} <: BeliefNode
     node::Int
 end
 
-isroot(h::POWTreeObsNode) = h.node==1
-function current_obs(h::POWTreeObsNode)
+BasicPOMCP.isroot(h::POWTreeObsNode) = h.node==1
+function BasicPOMCP.current_obs(h::POWTreeObsNode)
     if isroot(h)
         error("Tried to access the observation for the root node in a POMCPOW tree")
     else
